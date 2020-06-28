@@ -6,20 +6,17 @@ import { AddTodoForm } from "./components/AddTodoForm";
 
 const hCenterStyle: CSSProperties = {
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  flexDirection: "column",
 };
 
 const centerStyle: CSSProperties = {
+  ...hCenterStyle,
   padding: 0,
   margin: 0,
   width: "100%",
   height: "100%",
-  listStyle: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 };
 
 function App() {
@@ -50,7 +47,7 @@ function App() {
 
   return (
     <div style={hCenterStyle}>
-      <Paper style={{ marginTop: "30px" }}>
+      <Paper style={{ marginTop: "30px", minHeight: "80px" }}>
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}
