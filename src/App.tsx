@@ -56,7 +56,7 @@ function App() {
       </Paper>
       <Paper style={{ marginTop: "10px", width: "360px", height: "80px" }}>
         <div style={centerStyle}>
-          <AddTodoForm addTodo={addTodo} />
+          <AddTodoForm addTodo={addTodo} todos={todos} />
         </div>
       </Paper>
     </div>
