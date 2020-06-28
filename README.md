@@ -13,7 +13,7 @@
 1.  Clone the repo
 
 ```sh
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/GHOSCHT/material-ui-todo-list.git
 ```
 
 2.  Install NPM packages
@@ -43,6 +43,7 @@ npm deploy
 -   [React](https://reactjs.org/)
 -   [Material UI](https://material-ui.com/)
 -   [Formik](https://jaredpalmer.com/formik/)
+-   [Yup](https://github.com/jquense/yup)
 
 ## License
 
