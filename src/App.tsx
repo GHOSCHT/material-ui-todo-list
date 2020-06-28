@@ -2,6 +2,7 @@ import React, { CSSProperties, useState } from "react";
 import { TodoList } from "./TodoList";
 import InitialTodos from "./InitialTodos";
 import "./App.css";
+import { Paper } from "@material-ui/core";
 
 function App() {
   const [todos, setTodos] = useState(InitialTodos);
@@ -33,9 +34,16 @@ function App() {
 
   return (
     <div style={style as CSSProperties}>
-      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
-      <div className="separator"></div>
-      <pre>{JSON.stringify(todos, null, 2)}</pre>
+      <Paper style={{ marginTop: "30px" }}>
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          removeTodo={removeTodo}
+        />
+      </Paper>
+      <Paper style={{ marginTop: "30px", width: "350px" }}>
+        <pre>{JSON.stringify(todos, null, 2)}</pre>
+      </Paper>
     </div>
   );
 }
