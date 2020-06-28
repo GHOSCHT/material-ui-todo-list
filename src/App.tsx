@@ -1,17 +1,28 @@
 import React, { CSSProperties, useState } from "react";
 import { TodoList } from "./components/TodoList";
 import InitialTodos from "./InitialTodos";
-import "./App.css";
 import { Paper } from "@material-ui/core";
+import { AddTodo } from "./components/AddTodo";
 
 function App() {
   const [todos, setTodos] = useState(InitialTodos);
 
-  const style = {
+  const horizCenterStyle: CSSProperties = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+  };
+
+  const centerStyle: CSSProperties = {
+    padding: 0,
+    margin: 0,
+    width: "100%",
+    height: "100%",
+    listStyle: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const toggleTodo = (selectedTodo: Todo) => {
@@ -33,13 +44,18 @@ function App() {
   };
 
   return (
-    <div style={style as CSSProperties}>
+    <div style={horizCenterStyle}>
       <Paper style={{ marginTop: "30px" }}>
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}
           removeTodo={removeTodo}
         />
+      </Paper>
+      <Paper style={{ marginTop: "10px", width: "360px", height: "80px" }}>
+        <div style={centerStyle}>
+          <AddTodo />
+        </div>
       </Paper>
       <Paper style={{ marginTop: "30px", width: "360px" }}>
         <pre>
