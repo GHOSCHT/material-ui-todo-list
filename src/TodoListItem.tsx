@@ -10,6 +10,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 interface Props {
   todo: Todo;
   toggleTodo: (selectedTodo: Todo) => void;
+  removeTodo: (selectedTodo: Todo) => void;
 }
 
 export const TodoListItem: React.FC<Props> = (props) => {
@@ -25,7 +26,11 @@ export const TodoListItem: React.FC<Props> = (props) => {
       </ListItemIcon>
       <ListItemText primary={props.todo.text} />
       <ListItemSecondaryAction>
-        <IconButton edge="end" aria-label="delete">
+        <IconButton
+          edge="end"
+          aria-label="delete"
+          onClick={() => props.removeTodo(props.todo)}
+        >
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>

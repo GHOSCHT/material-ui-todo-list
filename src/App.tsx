@@ -14,7 +14,7 @@ function App() {
   };
 
   const toggleTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.map((todo) => {
+    const updatedTodos = todos.map((todo) => {
       if (todo === selectedTodo) {
         return {
           ...todo,
@@ -23,12 +23,17 @@ function App() {
       }
       return todo;
     });
-    setTodos(newTodos);
+    setTodos(updatedTodos);
+  };
+
+  const removeTodo = (selectedTodo: Todo) => {
+    const updatedTodos = todos.filter((todo) => todo !== selectedTodo);
+    setTodos(updatedTodos);
   };
 
   return (
     <div style={style as CSSProperties}>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
       <div className="separator"></div>
       <pre>{JSON.stringify(todos, null, 2)}</pre>
     </div>

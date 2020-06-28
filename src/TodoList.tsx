@@ -6,6 +6,7 @@ import { TodoListItem } from "./TodoListItem";
 interface Props {
   todos: Todo[];
   toggleTodo: (selectedTodo: Todo) => void;
+  removeTodo: (selectedTodo: Todo) => void;
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +28,7 @@ export const TodoList: React.FC<Props> = (props) => {
             key={todo.text}
             todo={todo}
             toggleTodo={props.toggleTodo}
+            removeTodo={props.removeTodo}
           />
         );
       })}
