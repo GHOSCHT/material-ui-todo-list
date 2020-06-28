@@ -24,6 +24,8 @@ npm install
 
 ## Development server
 
+Start the development server
+
 ```sh
 npm start
 ```
