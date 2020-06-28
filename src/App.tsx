@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from "react";
-import { TodoList } from "./TodoList";
+import { TodoList } from "./components/TodoList";
 import InitialTodos from "./InitialTodos";
 import "./App.css";
 import { Paper } from "@material-ui/core";
@@ -41,7 +41,7 @@ function App() {
           removeTodo={removeTodo}
         />
       </Paper>
-      <Paper style={{ marginTop: "30px", width: "350px" }}>
+      <Paper style={{ marginTop: "30px", width: "360px" }}>
         <pre>
           {todos.length === 0 ? "Empty" : JSON.stringify(todos, null, 2)}
         </pre>

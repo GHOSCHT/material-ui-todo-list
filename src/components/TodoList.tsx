@@ -12,7 +12,7 @@ interface Props {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 360,
+    minWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -22,16 +22,18 @@ export const TodoList: React.FC<Props> = (props) => {
 
   return (
     <List className={classes.root}>
-      {props.todos.map((todo) => {
-        return (
-          <TodoListItem
-            key={todo.text}
-            todo={todo}
-            toggleTodo={props.toggleTodo}
-            removeTodo={props.removeTodo}
-          />
-        );
-      })}
+      {props.todos.length === 0
+        ? "Empty"
+        : props.todos.map((todo) => {
+            return (
+              <TodoListItem
+                key={todo.text}
+                todo={todo}
+                toggleTodo={props.toggleTodo}
+                removeTodo={props.removeTodo}
+              />
+            );
+          })}
     </List>
   );
 };
