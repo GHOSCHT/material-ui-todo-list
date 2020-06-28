@@ -28,6 +28,7 @@ export const TodoListItem: React.FC<Props> = (props) => {
           disableRipple
           checked={props.todo.complete}
           onChange={() => props.toggleTodo(props.todo)}
+          color="primary"
         />
       </ListItemIcon>
       <ListItemText disableTypography primary={props.todo.text} style={style} />
