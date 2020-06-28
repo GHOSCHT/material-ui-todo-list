@@ -1,6 +1,7 @@
 # material-ui-todo-list
 
 [![Website shields.io](https://img.shields.io/website-up-down-success-red/http/shields.io.svg)](https://ghoscht.github.io/material-ui-todo-list/)
+[![Deployment](https://github.com/GHOSCHT/material-ui-todo-list/workflows/Deployment/badge.svg)](https://github.com/GHOSCHT/material-ui-todo-list/actions?query=workflow%3ADeployment)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/18427684106f4f85ba4578442951ce3f)](https://www.codacy.com/manual/GHOSCHT/material-ui-todo-list?utm_source=github.com&utm_medium=referral&utm_content=GHOSCHT/material-ui-todo-list&utm_campaign=Badge_Grade)
 
 <!-- GETTING STARTED -->
