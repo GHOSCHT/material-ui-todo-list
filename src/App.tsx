@@ -42,7 +42,9 @@ function App() {
         />
       </Paper>
       <Paper style={{ marginTop: "30px", width: "350px" }}>
-        <pre>{JSON.stringify(todos, null, 2)}</pre>
+        <pre>
+          {todos.length === 0 ? "Empty" : JSON.stringify(todos, null, 2)}
+        </pre>
       </Paper>
     </div>
   );
