@@ -2,28 +2,28 @@ import React, { CSSProperties, useState } from "react";
 import { TodoList } from "./components/TodoList";
 import InitialTodos from "./InitialTodos";
 import { Paper } from "@material-ui/core";
-import { AddTodo } from "./components/AddTodo";
+import { AddTodoForm } from "./components/AddTodoForm";
+
+const hCenterStyle: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+};
+
+const centerStyle: CSSProperties = {
+  padding: 0,
+  margin: 0,
+  width: "100%",
+  height: "100%",
+  listStyle: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 function App() {
   const [todos, setTodos] = useState(InitialTodos);
-
-  const horizCenterStyle: CSSProperties = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-  };
-
-  const centerStyle: CSSProperties = {
-    padding: 0,
-    margin: 0,
-    width: "100%",
-    height: "100%",
-    listStyle: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  };
 
   const toggleTodo = (selectedTodo: Todo) => {
     const updatedTodos = todos.map((todo) => {
@@ -43,8 +43,13 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  const addTodo = (newTodoText: string) => {
+    const newTodo: Todo = { text: newTodoText, complete: false };
+    setTodos([...todos, newTodo]);
+  };
+
   return (
-    <div style={horizCenterStyle}>
+    <div style={hCenterStyle}>
       <Paper style={{ marginTop: "30px" }}>
         <TodoList
           todos={todos}
@@ -54,13 +59,8 @@ function App() {
       </Paper>
       <Paper style={{ marginTop: "10px", width: "360px", height: "80px" }}>
         <div style={centerStyle}>
-          <AddTodo />
+          <AddTodoForm addTodo={addTodo} />
         </div>
-      </Paper>
-      <Paper style={{ marginTop: "30px", width: "360px" }}>
-        <pre>
-          {todos.length === 0 ? "Empty" : JSON.stringify(todos, null, 2)}
-        </pre>
       </Paper>
     </div>
   );
