@@ -4,11 +4,11 @@ const InitialTodos: Todo[] = [
     complete: false,
   },
   {
-    text: "Write app",
+    text: "Write an app",
     complete: true,
   },
   {
-    text: "Make Drillchan bigger and better",
+    text: "Go to school",
     complete: false,
   },
   {
