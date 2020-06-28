@@ -5,9 +5,15 @@ import { TodoListItem } from "./TodoListItem";
 
 interface Props {
   todos: Todo[];
-  toggleTodo: (selectedTodo: Todo) => void;
-  removeTodo: (selectedTodo: Todo) => void;
+  toggleTodo: ToggleTodo;
+  removeTodo: RemoveTodo;
 }
+
+const styles = {
+  marginLeft: "35px",
+  color: "#757575",
+  fontFamily: "Roboto",
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,18 +28,20 @@ export const TodoList: React.FC<Props> = (props) => {
 
   return (
     <List className={classes.root}>
-      {props.todos.length === 0
-        ? "Empty"
-        : props.todos.map((todo) => {
-            return (
-              <TodoListItem
-                key={todo.text}
-                todo={todo}
-                toggleTodo={props.toggleTodo}
-                removeTodo={props.removeTodo}
-              />
-            );
-          })}
+      {props.todos.length === 0 ? (
+        <p style={styles}>Empty</p>
+      ) : (
+        props.todos.map((todo) => {
+          return (
+            <TodoListItem
+              key={todo.text}
+              todo={todo}
+              toggleTodo={props.toggleTodo}
+              removeTodo={props.removeTodo}
+            />
+          );
+        })
+      )}
     </List>
   );
 };
