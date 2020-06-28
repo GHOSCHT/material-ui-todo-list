@@ -9,8 +9,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
 interface Props {
   todo: Todo;
-  toggleTodo: (selectedTodo: Todo) => void;
-  removeTodo: (selectedTodo: Todo) => void;
+  toggleTodo: ToggleTodo;
+  removeTodo: RemoveTodo;
 }
 
 export const TodoListItem: React.FC<Props> = (props) => {
