@@ -14,6 +14,12 @@ interface Props {
 }
 
 export const TodoListItem: React.FC<Props> = (props) => {
+  const style = {
+    color: props.todo.complete ? "#aaaaaa" : "#757575",
+    fontFamily: "Roboto",
+    textDecoration: props.todo.complete ? "line-through" : "none",
+  };
+
   return (
     <ListItem dense button onClick={() => props.toggleTodo(props.todo)}>
       <ListItemIcon>
@@ -24,7 +30,7 @@ export const TodoListItem: React.FC<Props> = (props) => {
           onChange={() => props.toggleTodo(props.todo)}
         />
       </ListItemIcon>
-      <ListItemText primary={props.todo.text} />
+      <ListItemText disableTypography primary={props.todo.text} style={style} />
       <ListItemSecondaryAction>
         <IconButton
           edge="end"
