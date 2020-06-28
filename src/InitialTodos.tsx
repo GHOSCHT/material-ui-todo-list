@@ -15,6 +15,10 @@ const InitialTodos: Todo[] = [
     text: "Watch Michael Reeves",
     complete: true,
   },
+  {
+    text: "Add automatic deployment",
+    complete: true,
+  },
 ];
 
 export default InitialTodos;
