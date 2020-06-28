@@ -20,7 +20,7 @@ export const AddTodoForm: React.FC<Props> = (props) => {
   const validationSchema = yup.object().shape({
     addTodo: yup
       .string()
-      .required()
+      .required("Type something above")
       .notOneOf(todoTexts, "Item already exists")
       .max(itemLenth, `Use less than ${itemLenth} letters`),
   });
